@@ -1,44 +1,44 @@
-# 💰 Kişisel Finans Takip Uygulaması
+# 💰 Приложение для учета личных финансов
 
-Bu proje, **Flutter** kullanılarak geliştirilmiş, modern ve "Production-ready" bir kişisel finans ve bütçe takip uygulamasıdır. 
+Это современное, "Production-ready" приложение для отслеживания личных финансов и управления бюджетом, разработанное на **Flutter**.
 
-Uygulama geliştirilirken **üçüncü parti State Management paketleri kullanılmamış**, tamamen Flutter'ın yerel (native) çözümleriyle inşa edilmiştir.
+Приложение создано **строго без использования сторонних пакетов для State Management**. Вся архитектура построена исключительно на нативных решениях Flutter.
 
-## ✨ Özellikler (Features)
+## ✨ Особенности
 
-* **🎨 Premium Tasarım:** Glassmorphism detayları, yumuşak gölgelendirmeler ve Google Fonts (Inter) ile modern UI/UX.
-* **🧠 Native State Management:** `Bloc`, `Riverpod` veya `GetX` yok! Tüm durum yönetimi tamamen `ValueNotifier`, `ValueListenableBuilder` ve `InheritedWidget` ile sağlanmaktadır.
-* **🗄️ SQLite Veritabanı:** Tüm veriler cihazda yerel ve güvenli bir şekilde `sqflite` ile saklanır (Web için `sqflite_common_ffi_web` desteği içerir).
-* **📊 Özel Grafik Motoru (Native Pie Chart):** Dışa bağımlılığı sıfıra indirmek için, istatistik grafikleri tamamen `CustomPaint` kullanılarak sıfırdan yazılmıştır.
-* **⚙️ Gelişmiş Fonksiyonlar:** 
-  * "Swipe-to-delete" (Kaydırarak silme) özelliği.
-  * Kategori yönetimi (Yeni kategori ekleme, ikon seçme, silme).
-  * Tarih seçici (Date Picker) ile geçmişe dönük işlem ekleme.
-  * Aylar arası geçiş ve dinamik bakiye hesaplama.
-* **🌍 Dil:** Arayüz tamamen Türkçe olarak tasarlanmıştır.
+* **🎨 Премиальный дизайн:** Современный UI/UX с эффектом Glassmorphism (эффект матового стекла), мягкими тенями и типографикой от Google Fonts (Inter).
+* **🧠 Нативный State Management:** Никаких `Bloc`, `Riverpod` или `GetX`! Управление состоянием реализовано полностью на базовых компонентах: `ValueNotifier`, `ValueListenableBuilder` и `InheritedWidget`.
+* **🗄️ База данных SQLite:** Все данные надежно хранятся локально на устройстве с помощью `sqflite` (добавлена поддержка `sqflite_common_ffi_web` для работы прямо в браузере).
+* **📊 Кастомный движок графиков:** Чтобы свести внешние зависимости к нулю, круговая диаграмма для статистики написана полностью с нуля с использованием нативного `CustomPaint`.
+* **⚙️ Расширенные функции:** 
+  * "Swipe-to-delete" (удаление свайпом).
+  * Управление категориями (добавление новых, выбор иконок, удаление).
+  * Date Picker (выбор даты) для добавления операций задним числом.
+  * Навигация по месяцам с динамическим пересчетом баланса.
+* **🌍 Язык:** Пользовательский интерфейс приложения реализован строго на турецком языке (как и требовалось в ТЗ).
 
-## 🏗️ Mimari (Architecture)
+## 🏗️ Архитектура
 
-Proje katmanlı mimariye (Separation of Concerns) sıkı sıkıya bağlıdır:
-* `lib/models/`: Veri modelleri (Category, Transaction).
-* `lib/database/`: SQLite veritabanı kurulumu ve sorguları.
-* `lib/services/`: İş mantığı ve Uygulama Durumu (FinanceState).
-* `lib/ui/screens/`: Bağımsız ekranlar (Ana Sayfa, İstatistikler, Kategoriler).
-* `lib/ui/widgets/`: Tekrar kullanılabilir UI bileşenleri (Kartlar, Listeler, Grafikler).
+Проект строго следует принципу разделения ответственности (Separation of Concerns):
+* `lib/models/`: Модели данных (Category, Transaction).
+* `lib/database/`: Инициализация SQLite и SQL-запросы.
+* `lib/services/`: Бизнес-логика и управление состоянием (FinanceState).
+* `lib/ui/screens/`: Независимые экраны (Главная, Статистика, Категории).
+* `lib/ui/widgets/`: Переиспользуемые UI-компоненты (Карточки, Списки, Графики).
 
-## 🚀 Kurulum (Getting Started)
+## 🚀 Установка и запуск
 
-Projeyi bilgisayarınızda çalıştırmak için:
+Чтобы запустить проект на вашем компьютере:
 
-1. Repoyu klonlayın:
+1. Клонируйте репозиторий:
    ```bash
    git clone https://github.com/dzhanmar1/flutter-project.git
    ```
-2. Bağımlılıkları yükleyin:
+2. Установите зависимости:
    ```bash
    flutter pub get
    ```
-3. Uygulamayı çalıştırın (Örn: Chrome üzerinde):
+3. Запустите приложение (например, в браузере Chrome для быстрого тестирования):
    ```bash
    flutter run -d chrome
    ```
